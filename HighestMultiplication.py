@@ -2,16 +2,15 @@
 should be split such that the sum is equal to the given number but it should be highest
 product 
 '''
-def highest_product():
-    number = int(input("enter the number"))
-    count = 0
-    i=1
-    if (number > 1 and number <=100):
-        while (number>0):
-            if(number%3==0):
-                count+=1
-            number = number//3
-            
-    print(count**count)
-highest_product()
+def doCalc(num):
+    temp = num
+    result =1
+    while(temp > 3):
+        result *= 3
+        temp -= 3
+    if temp != 0 :
+        result = result*temp
+    return result
 
+if __name__ == "__main__":
+    print(doCalc(9))
