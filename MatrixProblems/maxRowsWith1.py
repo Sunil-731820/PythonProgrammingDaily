@@ -2,7 +2,7 @@ def MaxRowWith():
     row = int(input("enter the number of the rows"))
     col = int(input("enter the number of the column"))
     matrix = []
-    #taking the input matrix from the array
+    #taking the input matrix from the array1
     for i in range(row):
         a = []
         for j in range(col):
