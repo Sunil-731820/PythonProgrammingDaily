@@ -1,4 +1,4 @@
-#
+#!
 def searchElementMat1():
     row = int(input("enter the number of the rows"))
     col = int(input("enter the number of the column"))
