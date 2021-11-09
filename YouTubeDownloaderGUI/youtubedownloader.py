@@ -5,6 +5,7 @@ from pytube import YouTube
 from tkinter import messagebox, filedialog
 from PIL import *
 import PIL as pl
+
 def widgets():
     CharPhoto = PhotoImage(file="youtube.gif")
     ChLabel = Label(root, image=CharPhoto,bd=7)
@@ -23,9 +24,11 @@ def widgets():
     button1.place(x=650,y=120)
     button2 = Button(root,text="Download Here",bg="aqua",fg="black",font=("arial",20),bd=6,command=download)
     button2.place(x=290,y=260)
+
 def browse():
     download_directory = filedialog.askdirectory(initialdir="YOUR DIRECTORY PATH",title="Save Videos")
     download_Path.set(download_directory)
+
 def download():
     video_link = video_Link.get()
     download_Folder = download_Path.get()
@@ -33,6 +36,7 @@ def download():
     Video_stream = get_video.streams.first()
     Video_stream.download(download_Folder)
     messagebox.showinfo("Video is downloaded successfully and saved in " + download_Folder)
+
 root = Tk()
 root.title("YOUTUBEDOWNLOADER")
 root.geometry("800x600")

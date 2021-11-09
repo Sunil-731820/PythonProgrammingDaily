@@ -1,0 +1,26 @@
+from tkinter import *
+import pyshorteners
+def widgets():
+    head1 = Label(root,text="URL SHORTENERS ",bg="black",fg="white",font=("arial",20),bd=10,width=30,relief=GROOVE)
+    head1.place(x=100,y=60)
+    head2 = Label(root,relief=GROOVE,text="------------------------------------------------------------------",fg="red",bd=10,width=50)
+    head2.place(x=130,y=120)
+    entry_label = Label(root,text="PASTE YOUR LINK HERE",bg="black",fg="red",font=("arial",15),width=25,bd=10,relief=GROOVE)
+    entry_label.place(x=100,y=200)
+    entry1 = Entry(root,textvariable=url,bd=12,width=71,relief=GROOVE)
+    entry1.place(x=400,y=200)
+    convert1 = Button(root,text="Convert LInk",bg="black",fg="white",font=("arial",20),bd=10,width=30,relief=GROOVE,command=convert)
+    convert1.place(x=130,y=300)
+    entry2 = Entry(root,textvariable=short_url,bd=12,relief=GROOVE,width=71)
+    entry2.place(x=130,y=400)
+def convert():
+    link = url.get()
+    s = pyshorteners.Shortener().tinyurl.short(link)
+    short_url.set(s)
+root = Tk()
+url = StringVar()
+short_url = StringVar()
+root.config(bg="aqua")
+root.geometry("1000x600")
+widgets()
+root.mainloop()
